@@ -4,8 +4,8 @@ import TaskList from './TaskList';
 
 const TodoList = () => {
     const [tasks, setTasks] = useState([]);
-    const [title, settitle] = useState('Enter your title');
-    const [description, setdescription ] = useState('Enter your description here');
+    const [title, settitle] = useState('');
+    const [description, setdescription ] = useState('');
     const addTask = (title, description) => {
         const myTodo ={
             key: Date.now,
