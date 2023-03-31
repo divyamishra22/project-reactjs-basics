@@ -1,43 +1,58 @@
 // import React from 'react'
 import React, { useState } from 'react';
+import TaskList from './TaskList';
+
 const TodoList = () => {
     const [tasks, setTasks] = useState([]);
+    const [title, settitle] = useState('Enter your title');
+    const [description, setdescription ] = useState('Enter your description here');
     const addTask = (title, description) => {
-        const newTask = { id: Date.now(), title, description };
-        setTasks([...tasks, newTask]);
+        const myTodo ={
+            key: Date.now,
+            title:title,
+            description: description,
+          }
+        setTasks([...tasks, myTodo]);
         console.log(tasks);
     };
+    const onChangingtitle = () =>{
+        console.log("title was changed");
 
-    const handleSubmit = e => {
+    }
+    const onChangingdesc =() =>{
+        console.log("description was changed");
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const title = e.target.title.value;
-        const description = e.target.description.value;
-        if (title.trim() === '' || description.trim() === '') {
-            alert('Please fill in all fields');
-            return;
+        settitle(e.target.value.title);
+        setdescription(e.target.value.description);
+        if (!title || !description) {
+            alert("Title or Description cannot be blank");
         }
-         else {
+        else {
             addTask(title, description);
         }
-        e.target.title.value = '';
-        e.target.description.value = '';
+        settitle('');
+        setdescription('');
     };
 
     return (
-        <div className='container flex-col'>
-            <h1 className='head'>Todo List</h1>
-            <form className='form flex-col'   onSubmit={handleSubmit}>
-                <div className='title flex-col'>
-                    <label>Title:</label>
-                    <input type="text" name="title" defaultValue={" "} />
+        <>
+            <form onClick={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
+                    <input type="text" className="form-control" id="exampleInputEmail1" value ={title}
+                    onChange={onChangingtitle}  /> 
                 </div>
-                <div className='desc flex-col'>
-                    <label>Description:</label>
-                    <input type="text" name="description"  defaultValue={" "} />
+                <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
+                    <input type="text" className="form-control" id="exampleInputPassword1" value ={description}
+                       onChange={onChangingdesc} />  
                 </div>
-                <button type="submit" className="btn btn-sm btn-success">Add </button>
+                <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
-        </div>    
+        </>
     );
 };
 
