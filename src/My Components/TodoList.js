@@ -7,13 +7,15 @@ const TodoList = () => {
     const [title, settitle] = useState('');
     const [description, setdescription ] = useState('');
     const addTask = (title, description) => {
+        // let key;
         const myTodo ={
-            key: Date.now,
+            // key: Date.now,
             title:title,
             description: description,
           }
         setTasks([...tasks, myTodo]);
         console.log(tasks);
+        return;
     };
     // const onChanging = (e) =>{
     //     settitle(e.target.value);
@@ -57,6 +59,9 @@ const TodoList = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
+            {/* <div>
+                <TaskList todos ={tasks}  />
+            </div> */}
         </>
     );
 };

@@ -1,7 +1,7 @@
 
 // import React from 'react';
 
-//     const Task = ({ task}) => {
+//     const Task = ({task}) => {
 //     return (
 //         <div className='task flex-row'>
 //             <div className='tasks'>
