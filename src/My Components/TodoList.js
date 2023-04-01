@@ -15,7 +15,6 @@ const TodoList = () => {
         description: description,
         }
         settasks([...tasks,myTodo]);
-        // settasks([myTodo,...tasks]);
         console.log(tasks);
       }
     const handleSubmit = (e) => {
@@ -26,8 +25,8 @@ const TodoList = () => {
         else {
             addTask(title,description);
         }
-        // settitle('');
-        // setdescription('');
+        settitle('');
+        setdescription('');
     };
 
     return (
