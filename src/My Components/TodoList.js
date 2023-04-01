@@ -5,6 +5,26 @@ const TodoList = () => {
     const [tasks, settasks] = useState([]);
     const [title, settitle] = useState('');
     const [description, setdescription ] = useState('');
+
+    const Todos = (
+        {
+            sno: 1,
+            title: "Market",
+            desc: "market",
+        },
+        {
+            sno: 2,
+            title: " movies",
+            sec: "Movies",
+        },
+        {
+            sno:3,
+            title: "restaurant",
+            desc: "Restaurant",
+        }
+    )
+    
+    
     
     const addTask =(title,description) =>{
         let key;
@@ -49,7 +69,7 @@ const TodoList = () => {
                 <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
             <div>
-                 {/* <TaskList todos={tasks} />   */}
+                  <TaskList todos={Todos} />  
                  
             </div>
         </>
