@@ -4,12 +4,10 @@ import Task from   '../My Components/Task';      ;
     const TaskList = ({tasks}) => {
     return (
         <div>
-      { tasks.length === 0? "NO TODOS TO DISPLAY": tasks.map((task) =>{
-        return  <Task task={task} key={task.key} />
-    }) 
-       } 
+      { tasks?.length? tasks.map((task) => 
+         <Task task={task} key={task.key} />) :"NO TODOS TO DISPLAY" }
        </div>                                           
     );
 };
 
-export default Task;
+export default TaskList;

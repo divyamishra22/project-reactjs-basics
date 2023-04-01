@@ -1,32 +1,14 @@
 // import React from 'react'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TaskList from './TaskList';
+
 const TodoList = () => {
     const [tasks, settasks] = useState([]);
     const [title, settitle] = useState('');
     const [description, setdescription ] = useState('');
-
-    // const Todos = (
-    //     {
-    //         sno: 1,
-    //         title: "Market",
-    //         desc: "market",
-    //     },
-    //     {
-    //         sno: 2,
-    //         title: " movies",
-    //         sec: "Movies",
-    //     },
-    //     {
-    //         sno:3,
-    //         title: "restaurant",
-    //         desc: "Restaurant",
-    //     }
-    // )
-    
-    
-    
-    const addTask =(title,description) =>{
+   
+  
+    const addTask =(title,description) => {
         let key;
         console.log("adding a todo");
         const myTodo ={
@@ -34,9 +16,14 @@ const TodoList = () => {
          title: title,
         description: description,
         }
-        settasks([...tasks,myTodo]);
+        settasks([...tasks, myTodo]);
         console.log(tasks);
-      }
+        console.log(tasks.length);
+      }  
+    //   useEffect(() =>{
+    //     console.log(tasks);
+    //     },
+    //     [tasks]) 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!title || !description) {
@@ -69,7 +56,8 @@ const TodoList = () => {
                 <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
             <div>
-                  <TaskList todos={tasks} />  
+                     <TaskList tasks={tasks} /> 
+                
                  
             </div>
         </>

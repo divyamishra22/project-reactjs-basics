@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 
-const Task = (task) => {
+const Task = ({task}) => {
   return (
-    <div className ="my">
+    <div>
        <h3>{task.title}</h3>
        <p>{task.description}</p>
     </div>
   )
 }
 
-export default Task
+export default Task;
