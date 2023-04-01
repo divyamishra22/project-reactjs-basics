@@ -1,67 +1,58 @@
 // import React from 'react'
 import React, { useState } from 'react';
 import TaskList from './TaskList';
-
 const TodoList = () => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, settasks] = useState([]);
     const [title, settitle] = useState('');
     const [description, setdescription ] = useState('');
-    const addTask = (title, description) => {
-        // let key;
+    
+    const addTask =(title,description) =>{
+        let key;
+        console.log("adding a todo");
         const myTodo ={
-            // key: Date.now,
-            title:title,
-            description: description,
-          }
-        setTasks([...tasks, myTodo]);
+         key: Date.now(),
+         title: title,
+        description: description,
+        }
+        settasks([...tasks,myTodo]);
+        // settasks([myTodo,...tasks]);
         console.log(tasks);
-        return;
-    };
-    // const onChanging = (e) =>{
-    //     settitle(e.target.value);
-    //     setdescription(e.target.value);
-    //     console.log("title was changed");
-    //     console.log("description was changed");
-    // }
-
-
+      }
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if (!title || !description) {
-        //     alert("Title or Description cannot be blank");
-        // }
-        // else {
-        //     addTask(title, description);
-        // }
-        addTask(title, description);
+        if (!title || !description) {
+            alert("Title or Description cannot be blank");
+        }
+        else {
+            addTask(title,description);
+        }
         // settitle('');
         // setdescription('');
     };
 
     return (
         <>
-            <form onClick={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" value ={title}
                     onChange={(e) =>{
-                        const changedtitle = e.target.value;
-                        settitle(changedtitle);
+                        settitle(e.target.value);
                     }}  /> 
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
                     <input type="text" className="form-control" id="exampleInputPassword1" value ={description}
                        onChange={(e) =>{
-                        const changeddescription  = e.target.value;
-                        setdescription(changeddescription);
+                        setdescription(e.target.value);
                        }} />  
                 </div>
                 <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
-            {/* <div>
-                <TaskList todos ={tasks}  />
-            </div> */}
+            <div>
+                 {/* <TaskList todos={tasks} />   */}
+                 
+            </div>
         </>
     );
 };

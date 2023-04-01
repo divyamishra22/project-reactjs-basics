@@ -1,18 +1,15 @@
 
-// import React from 'react';
+import React from 'react';
 
-//     const Task = ({task}) => {
-//     return (
-//         <div className='task flex-row'>
-//             <div className='tasks'>
-//                 <h3>{task.title}</h3>
-//                 <p>{task.description}</p>
-//             </div>
-           
+    const Task = (tasks) => {
+    return (
+        <div>
+      { tasks.length == 0? "NO TODOS TO DISPLAY": tasks.map((task) =>{
+          return <Task task={task}  key={task.key}/>
+    }) 
+       } 
+       </div>                                           
+    );
+};
 
-            
-//         </div>
-//     );
-// };
-
-// export default Task;
+export default Task;
