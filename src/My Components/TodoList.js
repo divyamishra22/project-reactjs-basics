@@ -20,10 +20,15 @@ const TodoList = () => {
         console.log(tasks);
         console.log(tasks.length);
       }  
-    //   useEffect(() =>{
-    //     console.log(tasks);
-    //     },
-    //     [tasks]) 
+    
+      const onDelete =(task) =>{
+        console.log("on delete of task", task);
+        settasks(tasks.filter((e)=> {
+          return e!== task;
+        }));
+        console.log("deleted", task)
+      }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!title || !description) {
@@ -56,7 +61,7 @@ const TodoList = () => {
                 <button type="submit" className="btn btn-primary">Add Todo</button>
             </form>
             <div>
-                     <TaskList tasks={tasks} /> 
+                     <TaskList tasks={tasks}   onDelete={onDelete} /> 
                 
                  
             </div>

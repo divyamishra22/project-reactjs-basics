@@ -1,11 +1,11 @@
 import Task from   '../My Components/Task';      ;
 // import React from 'react';
 
-    const TaskList = ({tasks}) => {
+    const TaskList = ({tasks , onDelete}) => {
     return (
         <div>
       { tasks?.length? tasks.map((task) => 
-         <Task task={task} key={task.key} />) :"NO TODOS TO DISPLAY" }
+         <Task task={task} key={task.key} onDelete={onDelete} />) :"NO TODOS TO DISPLAY" }
        </div>                                           
     );
 };
