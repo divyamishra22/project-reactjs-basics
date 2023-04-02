@@ -3,7 +3,7 @@ import Task from   '../My Components/Task';      ;
 
     const TaskList = ({tasks , onDelete}) => {
     return (
-        <div>
+        <div className='con-3'>
       { tasks?.length? tasks.map((task) => 
          <Task task={task} key={task.key} onDelete={onDelete} />) :"NO TODOS TO DISPLAY" }
        </div>                                           

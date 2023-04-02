@@ -1,4 +1,5 @@
 // import React from 'react'
+// import style from '../styles/style';
 import React, { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 
@@ -43,27 +44,33 @@ const TodoList = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
-                    <input type="text" className="form-control" id="exampleInputEmail1" value ={title}
+             <div className='container flex-col'>
+            <h1 className='head'>Todo List</h1>
+            <form className='form flex-col' onSubmit={handleSubmit}>
+            <div className='title flex-col'>
+                    <label htmlFor="exampleInputEmail1" className="form-label text-center">Title</label>
+                    <input type="text" className="form-control text-center" id="exampleInputEmail1" value ={title}
                     onChange={(e) =>{
                         settitle(e.target.value);
                     }}  /> 
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
-                    <input type="text" className="form-control" id="exampleInputPassword1" value ={description}
+                <div className='desc flex-col'>
+                    <label htmlFor="exampleInputPassword1" className="form-label text-center">Description</label>
+                    <input type="text" className="form-control text-center" id="exampleInputPassword1" value ={description}
                        onChange={(e) =>{
                         setdescription(e.target.value);
                        }} />  
                 </div>
-                <button type="submit" className="btn btn-primary">Add Todo</button>
+                
+                <div className='flex flex-col items-center justify-center'>
+                <button type="submit " className="btn btn-primary ">Add Todo</button>
+                </div>
             </form>
             <div>
                      <TaskList tasks={tasks}   onDelete={onDelete} /> 
                 
                  
+            </div>
             </div>
         </>
     );
