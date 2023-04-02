@@ -2,7 +2,8 @@
 
 body{
     background-color: white;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    /* background-image: linear-gradient(45deg, white 0%, #FFFB7D 100%); */
+    background-image: none;
     
 }
 .flex-col{
@@ -13,10 +14,18 @@ body{
 .flex-row{
     display: flex;
 }
-.btn {
+.btn-sucess {
  color:white;
  background-color: rgb(0, 128, 58);
- margin: 6px;
+ margin: 60px;
+ 
+}
+.btn-danger{
+    color:white;
+    background-color: rgba(255, 0, 0, 0.837);
+    display: flex;
+   
+
 }
 
 .navbar {
@@ -26,15 +35,10 @@ body{
     left: 0;
     right: 0;
     height: 100px;
-   
+    display: flex;
+    
 }
 
-.container-fluid{
-    display: inline;
-}
-.d-flex{
-    display: inline;
-}
 
 .container{
     height: 100vh;
@@ -69,6 +73,7 @@ input{
     border: 2px solid blue;
     padding-left: 25px;
     font-size: 20px;
+    margin: 10px;
 }
 input:focus{
     outline: none;
@@ -80,6 +85,7 @@ button{
 }
 label{
     font-size: 22px;
+    margin:auto;
 }
 .task{
     justify-content: center;
