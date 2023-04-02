@@ -4,16 +4,31 @@ import './App.css';
 import TodoList from './My Components/TodoList';
 import Header from './My Components/Header';
 import About from './My Components/About';
+import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 
 function App() {
  
   return (
-       <>
-       <Header/>
-      <TodoList />
-      <About/>
-      </>      
+      
+        <Router>
+       <Header title={"My Tasks List"}/>
+       <Routes>
+      {/* <Route exact path ='/'> */}
+      <Route path='/' element={<TodoList/>} />
+      {/* <TodoList /> */}
+      {/* </Route> */}
+      {/* <Route exact path ='/About'> */}
+      {/* <About/> */}
+      <Route path='/' element={<About/>} />
+      {/* </Route> */}
+      </Routes>
+      </Router>    
    
   )
 }
