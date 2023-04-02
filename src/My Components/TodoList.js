@@ -1,7 +1,7 @@
 // import React from 'react'
-// import style from '../styles/style';
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import TaskList from './TaskList';
+import './styles/style.css'
 
 const TodoList = () => {
     const [tasks, settasks] = useState([]);
@@ -10,7 +10,7 @@ const TodoList = () => {
    
   
     const addTask =(title,description) => {
-        let key;
+        //let key;
         console.log("adding a todo");
         const myTodo ={
          key: Date.now(),
