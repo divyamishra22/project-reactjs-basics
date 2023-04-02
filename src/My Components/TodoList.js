@@ -63,7 +63,7 @@ const TodoList = () => {
                 </div>
                 
                 <div className='flex flex-col items-center justify-center'>
-                <button type="submit " className="btn btn-primary ">Add Todo</button>
+                <button type="submit " className="btn btn-sm btn-success ">Add Todo</button>
                 </div>
             </form>
             <div>
